@@ -2,9 +2,19 @@
 <?php
 
 include __DIR__. '/functions.php';
-if(!empty($_SESSION['password'])) {
-    echo "Benvenuto " . $_SESSION['password'];
-    }
+
+// Simuliamo il recupero della password (puoi sostituire con il tuo codice)
+if (isset($_GET['password'])) {
+    header('Location: ./session.php');
+
+    session_start(); // Inizia la sessione
+
+    // Salva la password nella sessione
+    $_SESSION['password'] = randomPassword();
+    
+  }
+
+
 ?>
 
 <!-- Dobbiamo creare una pagina che permetta ai nostri utenti di utilizzare il nostro generatore di password (abbastanza) sicure. L’esercizio è suddiviso in varie milestone ed è molto importante svilupparle in modo ordinato.

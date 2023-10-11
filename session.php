@@ -1,18 +1,11 @@
 <?php
-header('Location: ./index.php');
-session_start();
-$_SESSION['color'];
+session_start(); // Assicurati di iniziare la sessione
 
+if(isset($_SESSION['password'])){
+    // Recupera la password dalla sessione
+    $password = $_SESSION['password'];
 
+    // Ora puoi visualizzare la password o eseguire altre operazioni con essa
+    echo $password;
+} 
 ?>
-<!DOCTYPE html>
-<html>
-<body>
-
-<?php
-// Echo session variables that were set on previous page
-echo "Favorite color is " . $_SESSION["color"] . ".<br>";
-?>
-
-</body>
-</html>
