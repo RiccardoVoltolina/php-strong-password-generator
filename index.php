@@ -21,8 +21,9 @@ Creare un form che invii in GET la lunghezza della password. Una nostra funzione
     <title>password generator</title>
 </head>
 <body>
-    <form action="./functions.php" method="GET">
-        <input type="text" name="password" id="password">
+    <h1>Password generator:</h1>
+    <form action="./index.php" method="GET">
+        <input type="text" name="password" id="password" placeholder="aggiungi caratteri">
         <button type="submit">invia</button>
     </form>
     <h1><?php echo randomPassword() ?></h1>

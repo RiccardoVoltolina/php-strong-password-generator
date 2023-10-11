@@ -10,7 +10,7 @@ function randomPassword() {
     if (isset($_GET['password'])) {
         $randomText = strlen($_GET['password']); 
         if ($randomText < 8) {
-            $errorMessage = 'inserisci un testo più lungo';
+            $errorMessage = 'inserisci un testo di almeno 8 caratteri';
             return $errorMessage;
 
         } else {
