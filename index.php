@@ -2,23 +2,33 @@
 <?php
 
 if (isset($_GET['password'])) {
-    var_dump($_GET['password']);
     $randomText = $_GET['password']; 
   }
 
 
 function randomPassword() {
+    
     if (isset($_GET['password'])) {
+        $randomText = strlen($_GET['password']); 
+        var_dump($randomText);
+        if ($randomText < 8) {
+            $errorMessage = 'inserisci un testo più lungo';
+            return $errorMessage;
 
-        $randomText = $_GET['password'];
-        $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890./%&!$£';
-        $pass = array(); //remember to declare $pass as an array
-        $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
-        for ($i = 0; $i < strlen($randomText); $i++) {
-            $n = rand(0, $alphaLength);
-            $pass[] = $alphabet[$n];
+        } else {
+            
+            $randomText = $_GET['password'];
+            $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890./%&!$£';
+            $pass = array(); //dico che pass è uguale a un array
+            $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+            for ($i = 0; $i < strlen($randomText); $i++) {
+                $n = rand(0, $alphaLength);//genero un numero integrale casuale
+                $pass[] = $alphabet[$n];
+            }
+            var_dump('ok');
+            return 'la tua password randomica è:' . implode($pass); //unisco gli elementi di un array in una stringa
         }
-        return implode($pass); //turn the array into a string
+
     }
       }
 
@@ -44,6 +54,7 @@ Creare un form che invii in GET la lunghezza della password. Una nostra funzione
         <input type="text" name="password" id="password">
         <button type="submit">invia</button>
     </form>
+    <h1><?php echo randomPassword() ?></h1>
 
 </body>
 </html>
