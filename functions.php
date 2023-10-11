@@ -1,4 +1,12 @@
+
+<!-- Milestone 2
+Verificato il corretto funzionamento del nostro codice, spostiamo la logica in un file functions.php che includeremo poi nella pagina principale -->
+
 <?php
+session_start();
+$_SESSION['color'];
+
+
 
 if (isset($_GET['password'])) {
     $randomText = $_GET['password']; 

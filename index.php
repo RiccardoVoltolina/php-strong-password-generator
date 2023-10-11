@@ -1,8 +1,10 @@
 
 <?php
 
-include __DIR__. '/functions.php'
-
+include __DIR__. '/functions.php';
+if(!empty($_SESSION['password'])) {
+    echo "Benvenuto " . $_SESSION['password'];
+    }
 ?>
 
 <!-- Dobbiamo creare una pagina che permetta ai nostri utenti di utilizzare il nostro generatore di password (abbastanza) sicure. L’esercizio è suddiviso in varie milestone ed è molto importante svilupparle in modo ordinato.
@@ -28,14 +30,14 @@ Creare un form che invii in GET la lunghezza della password. Una nostra funzione
     </form>
     <h1><?php echo randomPassword() ?></h1>
 
+
 </body>
 </html>
 
 
 
 
-<!-- Milestone 2
-Verificato il corretto funzionamento del nostro codice, spostiamo la logica in un file functions.php che includeremo poi nella pagina principale
+<!-- 
 Milestone 3 (BONUS)
 Invece di visualizzare la password nella index, effettuare un redirect ad una pagina dedicata che tramite $_SESSION recupererà la password da mostrare all’utente.
 leggete le slide sulla session e la documentazione
