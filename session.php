@@ -1,10 +1,8 @@
 <?php
 session_start(); // Assicurati di iniziare la sessione
 
-if(isset($_SESSION['password'])){
     // Recupera la password dalla sessione
     $password = $_SESSION['password'];
-} 
 ?>
 
 <!DOCTYPE html>
