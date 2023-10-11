@@ -1,22 +1,27 @@
 
 <?php
-var_dump($_GET['password']);
-$randomText = $_GET['password'];
+
+if (isset($_GET['password'])) {
+    var_dump($_GET['password']);
+    $randomText = $_GET['password']; 
+  }
 
 
 function randomPassword() {
-    $randomText = $_GET['password'];
-    $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890./%&!$£';
-    $pass = array(); //remember to declare $pass as an array
-    $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
-    for ($i = 0; $i < strlen($randomText); $i++) {
-        $n = rand(0, $alphaLength);
-        $pass[] = $alphabet[$n];
-    }
-    return implode($pass); //turn the array into a string
-}
+    if (isset($_GET['password'])) {
 
-var_dump(randomPassword())
+        $randomText = $_GET['password'];
+        $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890./%&!$£';
+        $pass = array(); //remember to declare $pass as an array
+        $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+        for ($i = 0; $i < strlen($randomText); $i++) {
+            $n = rand(0, $alphaLength);
+            $pass[] = $alphabet[$n];
+        }
+        return implode($pass); //turn the array into a string
+    }
+      }
+
 ?>
 
 <!-- Dobbiamo creare una pagina che permetta ai nostri utenti di utilizzare il nostro generatore di password (abbastanza) sicure. L’esercizio è suddiviso in varie milestone ed è molto importante svilupparle in modo ordinato.
