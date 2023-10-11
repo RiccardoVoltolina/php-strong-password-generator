@@ -38,7 +38,6 @@ Creare un form che invii in GET la lunghezza della password. Una nostra funzione
         <input type="text" name="password" id="password" placeholder="aggiungi caratteri">
         <button type="submit">invia</button>
     </form>
-    <h1><?php echo randomPassword() ?></h1>
 
 
 </body>
